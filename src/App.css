@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.ImageSize {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.Title {
+  margin: 15px;
+}
