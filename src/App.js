@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
+import bevelyn from "./bevelyn.jpg";
 
 class App extends Component {
    constructor(props) {
@@ -73,8 +74,16 @@ class App extends Component {
    render() {
       return (
          <div className="App">
-            <h3 className="Title">Baking with Bevelyn Links</h3>
-            <Container>{this.createGrid()}</Container>
+            <div className="TitleBar">
+               <img className="logo" src={bevelyn}></img>
+               <h6 className="Title">Baking with Bevelyn Links</h6>
+            </div>
+            <div className="RecipeGridContainer">
+               <p className="tap-message">Tap image to go to recipe</p>
+               <Container >
+                  {this.createGrid()}
+               </Container>
+            </div>
          </div>
       );
    }

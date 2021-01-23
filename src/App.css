@@ -8,6 +8,39 @@
   object-fit: cover;
 }
 
-.Title {
-  margin: 15px;
+.logo {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  display: inline-block;
+  margin-right: 12px;
+  border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
 }
+
+.Title {
+  text-align:left;
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+.TitleBar {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top:8px;
+  padding-bottom:8px;
+  text-align: left;
+}
+
+.tap-message{
+  text-align: left;
+  margin-left:15px;
+}
+
+.RecipeGridContainer{
+  text-align: center;
+  padding-top: 15px;
+  background-color: #F5F5F5;
+} 
