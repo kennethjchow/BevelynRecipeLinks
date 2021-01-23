@@ -66,7 +66,7 @@ class App extends Component {
          axios
             .get(`https://kennethjchow.api.stdlib.com/bevelyn-recipe-api@dev/`)
             .then((res) => {
-               console.log(res.data.rows);
+               const recipes = res.data.rows.sort((a, b) => (a.Timestamp > b.Timestamp) ? 1 : -1)
                this.setState({ recipes: res.data.rows, loaded: true });
             });
       }
