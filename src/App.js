@@ -40,7 +40,6 @@ class App extends Component {
    createGrid() {
       let rows = [];
       for (let count = 0; count < this.state.recipes.length; count += 2) {
-         console.log(count + 1 in this.state.recipes);
          if (count + 1 in this.state.recipes) {
             rows.push(
                <Row>
@@ -61,13 +60,25 @@ class App extends Component {
       return link.replace("/open?", "/thumbnail?");
    }
 
+   compare( a, b ) {
+      if ( new Date(a.fields.Timestamp) > new Date(b.fields.Timestamp) ){
+        return -1;
+      }
+      if ( new Date(a.fields.Timestamp) < new Date(b.fields.Timestamp) ){
+        return 1;
+      }
+      return 0;
+    }
+
    componentDidMount() {
       if (!this.state.loaded && this.state.recipes.length === 0) {
          axios
             .get(`https://kennethjchow.api.stdlib.com/bevelyn-recipe-api@dev/`)
             .then((res) => {
-               const recipes = res.data.rows.sort((a, b) => (a.Timestamp > b.Timestamp) ? 1 : -1)
-               this.setState({ recipes: res.data.rows, loaded: true });
+               console.log(res);
+               res.data.sort(this.compare)
+               console.log(res)
+               this.setState({ recipes: res.data, loaded: true });
             });
       }
    }
